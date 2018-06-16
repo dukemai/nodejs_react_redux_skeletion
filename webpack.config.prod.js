@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const clientFolder = path.join(__dirname, 'client');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     bundle: ['webpack-hot-middleware/client',
       path.join(clientFolder, 'index.js')],
