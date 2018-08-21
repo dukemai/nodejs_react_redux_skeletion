@@ -1,13 +1,12 @@
 /*eslint-disable */
-import express from 'express';
-import path from 'path';
-import logger from 'morgan';
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-import flash from 'connect-flash';
+const express = require('express')
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const flash = require('connect-flash');
 
-import index from './routes/';
-
+const index = require('./routes/');
 
 const app = express();
 
