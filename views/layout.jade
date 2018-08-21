@@ -4,7 +4,8 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="icon", href="/images/favicon.ico", type="image/x-icon")
-
+    if !isDevelopment
+      link(rel="stylesheet", href="/stylesheets/bundle.min.css")
   body
     block content
     

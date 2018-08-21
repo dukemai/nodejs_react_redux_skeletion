@@ -4,8 +4,6 @@ import path from 'path';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
 import flash from 'connect-flash';
 
 import index from './routes/';
@@ -15,7 +13,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 if (process.env.NODE_ENV === 'development') {
   /*eslint-disable */
@@ -53,6 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 app.use('/', index);
 
+app.locals.isDevelopment = process.env.NODE_ENV === 'development';
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
