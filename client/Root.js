@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { PersistGate } from 'redux-persist/integration/react';
 import Routes from './Routes';
@@ -24,11 +24,11 @@ const Root = ({ store, persistor, history }) => (
       loading={null}
       persistor={persistor}
     >
-      <ConnectedRouter history={history}>
+      <Router history={history}>
         <div>
             Routes
         </div>    
-      </ConnectedRouter>
+      </Router>
     </PersistGate>
   </Provider>
 );
